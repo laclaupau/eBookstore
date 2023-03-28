@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>BookwormBookstore</title>
+</head>
+
+<body>
+    <!--  ★´･ｪ･`★´･ｪ･`★´･ｪ･`★´･ｪ･`★    HEADER      ★´･ｪ･`★´･ｪ･`★´･ｪ･`★´･ｪ･`★´･ｪ･`★´ -->
+    <header class="header theme-sky-dark centered" id="header">
+        <div class="centered">
+            <img src="assets/logo.png" alt="brand logo" class="logo" aria-hidden="true">
+            <p class="brand" aria-label="Welcome to our online shop">E-BOOKSHOP</p>
+        </div>
+        <div>
+            <button class="btn-cart centered button button-simple-clear" aria-label="Show cart">
+                <i class="fas fa-shopping-cart cart-icon" aria-hidden="true"></i>
+                <div>
+                    <p class="cart-text">Cart (<span class="cart-qty">0</span> items)</p>
+                </div>
+            </button>
+        </div>
+    </header>
+    <!--★´･ｪ･`★´･ｪ･`★´･ｪ･`★´･ｪ･`★      END OF HEADER  ★´･ｪ･`★´･ｪ･`★´･ｪ･`★´･ｪ･`★´ -->
+
+    <!--  ★´･ｪ･`★´･ｪ･`★´･ｪ･`★´･ｪ･`★    BANNER    ★´･ｪ･`★´･ｪ･`★´･ｪ･`★´･ｪ･`★´･ｪ･`★´ -->
+    <div class="banner">
+        <h1>BOOKWORMS' BOOKSTORE</h1>
+    </div>
+    <!--  ★´･ｪ･`★´･ｪ･`★´･ｪ･`★´･ｪ･`★    END OF BANNER    ★´･ｪ･`★´･ｪ･`★´･ｪ･`★´･ｪ･`★´ -->
+
+    <!--  ★´･ｪ･`★´･ｪ･`★´･ｪ･`★´･ｪ･`★    CATALOG & FILTERS     ★´･ｪ･`★´･ｪ･`★´･ｪ･`★´･ｪ･`★´ -->
+    <section class="main-container centered" aria-labelledby="main-container" id="shop">
+        <aside id="filters-aside">
+            <button type="button" class="close-filters-btn is-hidden" aria-label="close filters">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+            <div class="filters-heading-container centered">
+                <div class="filters-title">
+                    <h2 aria-label="filter your search">FILTERS</h2>
+                </div>
+                <div class="filters-clear-btn-container">
+                    <button class="clear-btn centered" type="button" aria-label="clear filters">
+                        <i class="fas fa-trash-alt" aria-hidden="true"></i>
+                        <h3 class="clear-title">Clear</h3>
+                    </button>
+                </div>
+            </div>
+            <form action="">
+                <fieldset class="search-filter-container">
+                    <legend>
+                        <h3 aria-label="Type your search">SEARCH</h3>
+                    </legend>
+                    <label for="search-input" class="input-search-container centered">
+                        <input type="text" id="search-input" placeholder="Type in your search">
+                        <i class="fas fa-search search-icon" aria-hidden="true"></i>
+                    </label>
+                </fieldset>
+                <fieldset class="category-filter-container">
+                    <legend>
+                        <h3 aria-label="Filter by category">CATEGORY</h3>
+                    </legend>
+                    <div class="filters">
+                        <label for="feelings" class="input-category centered">
+                            <input type="checkbox" class="filter filter-category" name="category" value="feelings"
+                                id="feelings">
+                            <h4>FEELINGS</h4>
+                        </label>
+                        <label for="stereotypes" class="input-category centered">
+                            <input type="checkbox" class="filter filter-category" name="category" value="stereotypes"
+                                id="stereotypes">
+                            <h4>STEREOTYPES</h4>
+                        </label>
+                        <label for="questions" class="input-category centered">
+                            <input type="checkbox" class="filter filter-category" name="category" value="questions"
+                                id="questions">
+                            <h4>QUESTIONS</h4>
+                        </label>
+                        <label for="representation" class="input-category centered">
+                            <input type="checkbox" class="filter filter-category" name="category" value="representation"
+                                id="representation">
+                            <h4>REPRESENTATION</h4>
+                        </label>
+                        <label for="friendship" class="input-category centered">
+                            <input type="checkbox" class="filter filter-category" name="category" value="friendship"
+                                id="friendship">
+                            <h4>FRIENDSHIP</h4>
+                        </label>
+                    </div>
+                </fieldset>
+                <fieldset class="review-filter-container">
+                    <legend>
+                        <h3 aria-label="Filter by rank from one to five">REVIEW</h3>
+                    </legend>
+                    <div class="filters">
+                        <label for="five" class="input-review centered">
+                            <input type="checkbox" name="review" class="filter filter-review" value="5" id="five"
+                                aria-label="ranking">
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <h4>(5)</h4>
+                        </label>
+                        <label for="four" class="input-review centered">
+                            <input type="checkbox" name="review" class="filter filter-review" value="4" id="four"
+                                aria-label="ranking">
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="far fa-star" aria-hidden="true"></i>
+                            <h4>(4)</h4>
+                        </label>
+                        <label for="three" class="input-review centered">
+                            <input type="checkbox" name="review" class="filter filter-review" value="3" id="three"
+                                aria-label="ranking">
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="far fa-star" aria-hidden="true"></i>
+                            <i class="far fa-star" aria-hidden="true"></i>
+                            <h4>(3)</h4>
+                        </label>
+                        <label for="two" class="input-review centered">
+                            <input type="checkbox" name="review" class="filter filter-review" value="2" id="two" aria-label="ranking">
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="far fa-star" aria-hidden="true"></i>
+                            <i class="far fa-star" aria-hidden="true"></i>
+                            <i class="far fa-star" aria-hidden="true"></i>
+                            <h4>(2)</h4>
+                        </label>
+                        <label for="one" class="input-review centered">
+                            <input type="checkbox" name="review" class="filter filter-review" value="1" id="one" aria-label="ranking">
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="far fa-star" aria-hidden="true"></i>
+                            <i class="far fa-star" aria-hidden="true"></i>
+                            <i class="far fa-star" aria-hidden="true"></i>
+                            <i class="far fa-star" aria-hidden="true"></i>
+                            <h4>(1)</h4>
+                        </label>
+                    </div>
+                </fieldset>
+            </form>
+        </aside>
+        <main class="products-container">
+            <div class="products-header centered theme-sky">
+                <div>
+                    <p id="products-amount" aria-live="polite"></p>
+                </div>
+                <div class="view-buttons-container centered">
+                    <div>
+                        <p aria-label="Choose view">View</p>
+                    </div>
+                    <div id="grid-view-btn">
+                        <button type="button">
+                            <i class="fas fa-th" aria-hidden="true" title="gridview"></i>
+                        </button>
+                    </div>
+                    <div id="list-view-btn">
+                        <button type="button">
+                            <i class="fas fa-list" aria-hidden="true" title="listview"></i>
+                        </button>
+                    </div>
+                </div>
+                <button type="button" class="open-filters-btn button button-simple-clear is-hidden"
+                    aria-label="show filters">
+                    <i class="fas fa-filter" aria-hidden="true"></i>
+                    <span class="filter-text">Filters</span>
+                </button>
+            </div>
+            <div class="products-list grid">
+                <article class="product" data-id="1" data-name="The feelings book" data-category="feelings"
+                    data-price="3500" data-image="assets/feelings-book.jpg" data-review="2">
+                    <div class="product-img-container centered">
+                        <img src="assets/feelings-book.jpg" alt="book cover" class="product-img">
+                    </div>
+                    <div class="product-content column">
+                        <h2 class="product-name">The Feelings Book</h2>
+                        <h3 class="product-author">Todd Parr</h3>
+                        <p class="product-price" aria-label="Price in argentine pesos">$3500</p>
+                        <div class="review filters-review">
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="far fa-star" aria-hidden="true"></i>
+                            <i class="far fa-star" aria-hidden="true"></i>
+                            <i class="far fa-star" aria-hidden="true"></i>
+                        </div>
+                        <button type="button" class="button button-simple-solid button-add-to-cart" id="1">ADD TO CART
+                        </button>
+                    </div>
+                    <div class="product-description is-hidden">
+                        <p>write two lines describing plot.</p>
+                    </div>
+                </article>
+                <article class="product" data-id="2" data-name="Oliverio collects questions" data-category="questions"
+                    data-price="2500" data-image="assets/oliverio.jpg" data-review="5">
+                    <div class="product-img-container centered">
+                        <img src="assets/oliverio.jpg" alt="book cover" class="product-img">
+                    </div>
+                    <div class="product-content column">
+                        <h2 class="product-name">Oliverio collects questions</h2>
+                        <h3 class="product-author">Silvia Schujer</h3>
+                        <p class="product-price" aria-label="Price in argentine pesos">$2500</p>
+                        <div class="review filters-review">
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                        </div>
+                        <button type="button" class="button button-simple-solid button-add-to-cart" id="2">ADD TO CART
+                        </button>
+                    </div>
+                    <div class="product-description is-hidden">
+                        <p>write two lines describing plot.</p>
+                    </div>
+                </article>
+                <article class="product" data-id="3" data-name="It's OK to be different" data-category="representation"
+                data-price="4500" data-image="assets/be-different.jpg" data-review="4">
+                <div class="product-img-container centered">
+                    <img src="assets/be-different.jpg" alt="book cover" class="product-img">
+                </div>
+                <div class="product-content column">
+                    <h2 class="product-name">It's OK to be different</h2>
+                    <h3 class="product-author">Todd Parr</h3>
+                    <p class="product-price" aria-label="Price in argentine pesos">$4500</p>
+                    <div class="review filters-review">
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="far fa-star" aria-hidden="true"></i>
+                    </div>
+                    <button type="button" class="button button-simple-solid button-add-to-cart" id="3">ADD TO CART
+                    </button>
+                </div>
+                <div class="product-description is-hidden">
+                    <p>write two lines describing plot.</p>
+                </div>
+            </article>
+            <article class="product" data-id="4" data-name="The boy with big, big feelings" data-category="feelings"
+                data-price="3700" data-image="assets/big-big-feelings.jpg" data-review="3">
+                <div class="product-img-container centered">
+                    <img src="assets/big-big-feelings.jpg" alt="book cover" class="product-img">
+                </div>
+                <div class="product-content column">
+                    <h2 class="product-name">The boy with big, big feelings</h2>
+                    <h3 class="product-author">Britney Winn Lee</h3>
+                    <p class="product-price" aria-label="Price in argentine pesos">$3700</p>
+                    <div class="review filters-review">
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="far fa-star" aria-hidden="true"></i>
+                        <i class="far fa-star" aria-hidden="true"></i>
+                    </div>
+                    <button type="button" class="button button-simple-solid button-add-to-cart" id="3">ADD TO CART
+                    </button>
+                </div>
+                <div class="product-description is-hidden">
+                    <p>write two lines describing plot.</p>
+                </div>
+            </article>
+            <article class="product" data-id="5" data-name="The girl with big, big questions" data-category="questions"
+                data-price="3700" data-image="assets/big-big-questions.jpg" data-review="3">
+                <div class="product-img-container centered">
+                    <img src="assets/big-big-questions.jpg" alt="book cover" class="product-img">
+                </div>
+                <div class="product-content column">
+                    <h2 class="product-name">The girl with big, big questions</h2>
+                    <h3 class="product-author">Britney Winn Lee</h3>
+                    <p class="product-price" aria-label="Price in argentine pesos">$3700</p>
+                    <div class="review filters-review">
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="far fa-star" aria-hidden="true"></i>
+                        <i class="far fa-star" aria-hidden="true"></i>
+                    </div>
+                    <button type="button" class="button button-simple-solid button-add-to-cart" id="3">ADD TO CART
+                    </button>
+                </div>
+                <div class="product-description is-hidden">
+                    <p>write two lines describing plot.</p>
+                </div>
+            </article>
+            <article class="product" data-id="6" data-name="Tough guys" data-category="stereotypes"
+                data-price="4300" data-image="assets/tough-guys.jpg" data-review="4">
+                <div class="product-img-container centered">
+                    <img src="assets/tough-guys.jpg" alt="book cover" class="product-img">
+                </div>
+                <div class="product-content column">
+                    <h2 class="product-name">Tough guys</h2>
+                    <h3 class="product-author">Keith Negley</h3>
+                    <p class="product-price" aria-label="Price in argentine pesos">$4300</p>
+                    <div class="review filters-review">
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="far fa-star" aria-hidden="true"></i>
+                    </div>
+                    <button type="button" class="button button-simple-solid button-add-to-cart" id="3">ADD TO CART
+                    </button>
+                </div>
+                <div class="product-description is-hidden">
+                    <p>write two lines describing plot.</p>
+                </div>
+            </article>
+            <article class="product" data-id="7" data-name="The invisible boy" data-category="friendship"
+                data-price="4200" data-image="assets/the-invisible-boy.jpg" data-review="5">
+                <div class="product-img-container centered">
+                    <img src="assets/the-invisible-boy.jpg" alt="book cover" class="product-img">
+                </div>
+                <div class="product-content column">
+                    <h2 class="product-name">The invisible boy</h2>
+                    <h3 class="product-author">Trudy Ludwig</h3>
+                    <p class="product-price" aria-label="Price in argentine pesos">$3700</p>
+                    <div class="review filters-review">
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                    </div>
+                    <button type="button" class="button button-simple-solid button-add-to-cart" id="3">ADD TO CART
+                    </button>
+                </div>
+                <div class="product-description is-hidden">
+                    <p>write two lines describing plot.</p>
+                </div>
+            </article>
+            </div>
+        </main>
+    </section>
+    <!--  ★´･ｪ･`★´･ｪ･`★´･ｪ･`★    END OF CATALOG     ★´･ｪ･`★´･ｪ･`★´･ｪ･`★´･ｪ･`★´ -->
+    
+    <!--  ★´･ｪ･`★´･ｪ･`★´･ｪ･`★            FOOTER              ★´･ｪ･`★´･ｪ･`★´･ｪ･`★´･ｪ･`★´ -->
+    <footer class="footer-main centered theme-sky-dark">
+        <div class="logo-container centered">
+            <img src="assets/logo.png" alt="Enriqueta reading" class="logo">
+            <p>If you are going to get anywhere in life, you have to read a lot of books</p>
+            <span class="footer-quote"></span>
+            <p>Roald Dahl</p>
+        </div>
+    </footer>
+    <!--  ★´･ｪ･`★´･ｪ･`★´･ｪ･`★    END OF FOOTER     ★´･ｪ･`★´･ｪ･`★´･ｪ･`★´･ｪ･`★´ -->
+
+    <!--  ★´･ｪ･`★´･ｪ･`★´･ｪ･`★        CART       ★´･ｪ･`★´･ｪ･`★´･ｪ･`★´･ｪ･`★´ -->
+    <div class="cart theme-sky-dark cart-hidden is-hidden">
+        <div class="cart-container column">
+            <div class="cart-title-container centered">
+                <h2>CART</h2>
+                <button type="button" class="btn-close">
+                    <i class="far fa-window-close"></i>
+                </button>
+            </div>
+            <div class="cart-full">
+                <div class="column">
+                    <p><span class="cart-qty">0</span>product(s) added</p>
+                </div>
+                <div class="cart-products-added"></div>
+                <div class="subtotal-container column">
+                    <p>Subtotal $ <span class="cart-subtotal-value">0</span></p>
+                </div>
+                <div class="cart-buttons column">
+                    <button class="btn-buy centered button button-simple-solid-reverse" 
+                    type="button">PURCHASE</button>
+                    <button class="btn-clear-cart centered button button-simple-clear" 
+                    type="button">CLEAR CART</button>
+                </div>
+            </div>
+            <div class="cart-clear is-hidden">
+                <p class="cart-clear-msg">You have no products in your cart. Add some!</p>
+            </div>
+        </div>
+    </div>
+    <!--  ★´･ｪ･`★´･ｪ･`★´･ｪ･`★        END OF CART       ★´･ｪ･`★´･ｪ･`★´･ｪ･`★´･ｪ･`★´ -->
+    
+    <!--  ★´･ｪ･`★´･ｪ･`★´･ｪ･`★      CONFIRM PURCHASE       ★´･ｪ･`★´･ｪ･`★´･ｪ･`★´･ｪ･`★´ -->
+    <div class="checkout-modal column is-hidden">
+        <h2 class="checkout-title">Checkout</h2>
+        <div class="checkout-container column">
+            <div class="form-container">
+                <fieldset class="checkout-info column">
+                    <div class="checkout-personal-info">
+                        <legend class="info-title">Personal information</legend>
+                        <div class="checkout-personal-info-inputs">
+                            <label for="FullName">
+                                Full name *
+                                <input type="text" placeholder="Example: John Doe" name="Full name" required id="FullName">
+                            </label>
+                            <label for="email">
+                                Email *
+                                <input type="email" placeholder="Example: john.doe@gmail.com" required id="email">
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="checkout-payment column">
+                    <div class="checkout-section-container column">
+                        <legend class="info-title">Payment options</legend>
+                        <label for="cash-debit">
+                            <input type="radio" class="pay-option" name="payment" value="cash-debit" checked id="cash-debit">
+                            Cash / Debit card
+                        </label>
+                        <label for="credit">
+                            <input type="radio" class="pay-option" name="payment" value="credit" id="credit">
+                            Credit card
+                        </label>
+                        <label for="delivery">
+                            <input type="checkbox" class="pay-option" name="delivery" id="delivery">
+                            Want it delivered
+                        </label>
+                        <label for="discount">
+                            <input type="checkbox" class="pay-option" name="discount" id="discount">
+                            Got discount code
+                        </label>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="cart-totals column">
+                <h3 class="info-title">Summary</h3>
+                <div>
+                    <p class="cart-subtotal">Subtotal $ <span class="cart-subtotal-value">0</span></p>
+                    <p class="cart-tax is-hidden">Extra charge $ <span class="cart-tax-value">0</span></p>
+                    <p class="cart-discount is-hidden">10% discount code $ <span class="cart-discount-value">0</span></p>
+                    <p class="cart-delivery is-hidden">Delivery $ <span class="cart-delivery-value">0</span></p>
+                    <p class="cart-total">Total $ <span class="cart-total-value">0</span></p>
+                </div>
+            </div>
+        </div>
+        <footer class="footer-checkout centered">
+            <button class="btn-keep-buying button button-simple-solid" type="button">
+                KEEP BUYING</button>
+            <button class="btn-finish-buy button button-simple-solid-reverse" type="button">
+                FINISH PURCHASE</button>
+        </footer>
+    </div>
+    <!--  ★´･ｪ･`★´･ｪ･`★´･ｪ･`★      END OF CONFIRM PURCHASE       ★´･ｪ･`★´･ｪ･`★´･ｪ･`★´･ｪ･`★´ -->
+
+    <!--  ★´･ｪ･`★´･ｪ･`★´･ｪ･`★         CLEAR CART MODAL         ★´･ｪ･`★´･ｪ･`★´･ｪ･`★´･ｪ･`★´ -->
+    <div class="modal-clear-cart column is-hidden" aria-role="dialog" aria-modal="true" aria-describedby="clear-cart-description"
+    aria-hidden="true">
+        <p class="modal-message" id="clear-cart-description">You're about to clear your cart. Do you want to continue?</p>
+        <footer class="modal-btn-container">
+            <button class="button button-simple-solid-reverse cancel-clear-cart-btn" type="button">CANCEL</button>
+            <button class="button button-simple-solid confirm-clear-cart-btn" type="button">CLEAR</button>
+        </footer>
+    </div>
+    <div class="overlay is-hidden" id="overlay" style="z-index: 1"></div>
+    <!--  ★´･ｪ･`★´･ｪ･`★´･ｪ･`★         END OF CART MODAL         ★´･ｪ･`★´･ｪ･`★´･ｪ･`★´･ｪ･`★´ -->
+
+    <script src="index.js"></script>
+</body>
+
+</html>
